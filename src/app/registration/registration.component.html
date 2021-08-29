@@ -1,0 +1,33 @@
+<div class="grid">
+  <div class="col-12 flex flex-column align-items-center justify-content-center">
+    <div class="text-2xl font-italic font-bold text-gray-600 p-6">
+      Register here...
+    </div>
+    <div id="loginpanel" class="border-round surface-300 p-6">
+      <div class="field grid">
+        <div class="col">
+          <input type="text" [(ngModel)]="email" size=30 pInputText class="p-inputtext-lg" placeholder="E-mail"
+            required>
+        </div>
+      </div>
+      <div class="field grid">
+        <div class="col">
+          <input type="text" [(ngModel)]="username"  size=30 pInputText class="p-inputtext-lg" placeholder="Username"
+            required>
+        </div>
+      </div>
+      <div class="field grid">
+        <div class="col">
+          <input type="password" [(ngModel)]="password" size=30 pInputText class="p-inputtext-lg" placeholder="Password"
+            required>
+        </div>
+      </div>
+      <div *ngIf="!isValid" class="text-blue-900 p-2">
+        {{validationMessage}}
+      </div>
+      <p-button (onClick)="register()" label="Register"></p-button>
+    </div>
+  </div>
+  <p-toast position="top-center"></p-toast>
+</div>
+

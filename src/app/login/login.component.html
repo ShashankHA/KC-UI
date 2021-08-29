@@ -1,0 +1,27 @@
+<div class="grid">
+  <div class="col-12 flex flex-column align-items-center justify-content-center">
+    <div class="text-6xl font-italic font-bold text-gray-600">
+      <h2>Welcome to Knowledge Corner!</h2>
+    </div>
+    <div id="loginpanel" class="border-round surface-300 m-2 p-6">
+      <div class="field grid">
+        <div class="col">
+          <input type="text" [(ngModel)]="username" size=30 pInputText class="p-inputtext-lg" placeholder="Username"
+            required>
+        </div>
+      </div>
+      <div class="field grid">
+        <div class="col">
+          <input type="password" [(ngModel)]="password" size=30 pInputText class="p-inputtext-lg" placeholder="Password"
+            required>
+        </div>
+      </div>
+      <div *ngIf="!isValid" class="text-blue-900 p-2">
+        {{validationMessage}}
+      </div>
+      <p-button (onClick)="doLogin()" label="Login"></p-button>
+      <p-button label="New user? Register" styleClass="p-button-link" routerLink="/register"></p-button>
+    </div>
+  </div>
+</div>
+<p-toast position="top-center"></p-toast>

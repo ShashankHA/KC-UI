@@ -27,5 +27,10 @@ export class LoginService {
     return this.http.post<any>(loginUrl,loginRequest,httpOptions);
   }
 
+  authorizeLogin(){
+    let url =  "http://localhost:8080/user/authorizeUser";
+    return this.http.get<any>(url).toPromise<any>();
+  }
+
 
 }

@@ -31,6 +31,10 @@ export class RegistrationComponent implements OnInit {
               this.router.navigateByUrl("login");
             }, 1000);
           }
+          else if (result.code != undefined && result.code === "101"){
+            this.messageService.add({ severity: 'error', summary: 'User Already Exists' });
+            this.username ="";
+          }
           else{
             this.isValid = false;
             this.validationMessage = "Registration failed!"

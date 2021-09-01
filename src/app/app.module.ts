@@ -16,6 +16,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ToastModule } from 'primeng/toast';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import {SidebarModule} from 'primeng/sidebar';
+import { AuthguardService } from './services/authguard.service';
 
 
 @NgModule({
@@ -36,8 +38,9 @@ import { MessageModule } from 'primeng/message';
     MessagesModule,
     MessageModule,
     BrowserAnimationsModule,
+    SidebarModule,
   ],
-  providers: [LoginService,MessageService],
+  providers: [LoginService,MessageService,AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
